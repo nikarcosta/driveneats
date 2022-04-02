@@ -89,6 +89,14 @@ body {
     border-radius: 10px;
 }
 
+ion-icon {
+    background-color: green;
+}
+
+.selecionado {
+    border: 5px solid green;
+}
+
 .item {
     width: 172px;
     height: 216px;
