@@ -90,11 +90,11 @@ body {
 }
 
 ion-icon {
-    background-color: green;
+    background-color:  #32B72F;
 }
 
 .selecionado {
-    border: 5px solid green;
+    border: 5px solid  #32B72F;
 }
 
 .item {
@@ -165,6 +165,7 @@ div > img {
     background-color: #CBCBCB;
     width: 350px;
     height: 61px;
+    border-color: #CBCBCB;
     border-radius: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -188,4 +189,8 @@ div > img {
     inline-size: 200px;
     overflow-wrap: break-word;
 
+}
+
+.enable {
+    color: #32B72F;
 }
