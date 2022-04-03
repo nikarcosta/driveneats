@@ -22,6 +22,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1px;
 }
 
 .nome-restaurante {
@@ -89,13 +90,27 @@ body {
     border-radius: 10px;
 }
 
-ion-icon {
-    background-color:  #32B72F;
+.preco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+ion-icon {
+    color: green;
+    margin-right: 15px;
+    display: none;
+}
+
 
 .selecionado {
     border: 5px solid  #32B72F;
 }
+
+/*.selecionado ion-icon {
+    display: inline;
+    font-size: 20px;
+}*/
 
 .item {
     width: 172px;
@@ -165,7 +180,7 @@ div > img {
     background-color: #CBCBCB;
     width: 350px;
     height: 61px;
-    border-color: #CBCBCB;
+    border: none;
     border-radius: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -191,6 +206,6 @@ div > img {
 
 }
 
-.enable {
-    color: #32B72F;
+.enabled {
+    background-color: #32B72F;
 }

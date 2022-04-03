@@ -7,6 +7,8 @@ let valorBebida;
 let sobremesa = "";
 let valorSobremesa;
 let btn = document.querySelector('button');
+let endereco = "";
+let nome = "";
 
 function selecionarPrato(nomePrato) {
     
@@ -18,7 +20,7 @@ function selecionarPrato(nomePrato) {
     nomePrato.classList.add("selecionado");
     prato = document.querySelector(".selecionado > .nome-item").innerHTML;
     console.log(prato);
-    valorPrato = document.querySelector(".selecionado > .preco-item").innerHTML.replace("R$","").replace(",",".");
+    valorPrato = document.querySelector(".selecionado > .preco > .preco-item").innerHTML.replace("R$","").replace(",",".");
     console.log(valorPrato);
 
     habilitaBotao();
@@ -35,7 +37,7 @@ function selecionarBebida(nomeBebida) {
     nomeBebida.classList.add("selecionado");
     bebida = document.querySelector(".menu-bebidas > .selecionado > .nome-item").innerHTML;
     console.log(bebida);
-    valorBebida = document.querySelector(".menu-bebidas > .selecionado > .preco-item").innerHTML.replace("R$","").replace(",",".");
+    valorBebida = document.querySelector(".menu-bebidas > .selecionado > .preco > .preco-item").innerHTML.replace("R$","").replace(",",".");
     console.log(valorBebida);
     habilitaBotao();
   }
@@ -50,7 +52,7 @@ function selecionarSobremesa(nomeSobremesa) {
     nomeSobremesa.classList.add("selecionado");
     sobremesa = document.querySelector(".menu-sobremesas > .selecionado > .nome-item").innerHTML;
     console.log(sobremesa);
-    valorSobremesa = document.querySelector(".menu-sobremesas > .selecionado > .preco-item").innerHTML.replace("R$","").replace(",",".");
+    valorSobremesa = document.querySelector(".menu-sobremesas > .selecionado > .preco > .preco-item").innerHTML.replace("R$","").replace(",",".");
     console.log(valorSobremesa);
     habilitaBotao();
 }
@@ -75,7 +77,9 @@ function habilitaBotao(){
 
 
 function finalizarPedido(){
+    nome = prompt("Informe o seu nome:");
+    endereco = prompt("Informe o seu endereço:");
     calculaValorPedido();
-    let mensagem = `Olá, gostaria de fazer o pedido:- Prato: ${prato} - Bebida: ${bebida} - Sobremesa: ${sobremesa} Total: R$ ${valorPedido.toFixed(2)}`;
+    let mensagem = `Olá, gostaria de fazer o pedido:- Prato: ${prato} - Bebida: ${bebida} - Sobremesa: ${sobremesa} Total: R$ ${valorPedido.toFixed(2)} Nome: ${nome} Endereço: ${endereco}`;
     window.open("https://wa.me/551199999999?text=" + mensagem, '_blank');
 }
