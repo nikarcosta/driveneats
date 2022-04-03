@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    
     <div class="top">
         <div class="nome-restaurante">DrivenEats</div>
         <div class="slogan">Sua comida em 6 minutos</div>
@@ -99,10 +100,27 @@
     </div>
     
     <div class="bottom">
-        <button disabled = "true" class="confirm-order" onclick="finalizarPedido(this)"><p class="selection-text">Selecione os 3 items para fechar o pedido</p></button>
+        <button disabled = "true" class="confirm-order" onclick="confirmaPedido(this)"><p class="selection-text">Selecione os 3 items para fechar o pedido</p></button>
     </div>
   
+    <div class="confirma escondido">
+        <div class="dados-pedido">
+            <div class="confirme-pedido">Confirme seu pedido</div>
+            <div class="dados">
+                <div class="confirmation-line"><div class="confirma-prato"></div><div class="preco-prato"></div></div>
+                <div class="confirmation-line"><div class="confirma-bebida"></div><div class="preco-bebida"></div></div>
+                <div class="confirmation-line"><div class="confirma-sobremesa"></div><div class="preco-sobremesa"></div></div>
+                <div class="confirmation-line"><div class="confirma-total">TOTAL</div><div class="valor-total"></div></div>
+            </div>
+            <div class="botao-confirma">
+                <button class="confirma-button" onclick="finalizarPedido(this)">Tudo certo, pode pedir!</button>
+            </div>
+            <div class="cancela" onclick="cancelaPedido(this)">Cancelar</div>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>  
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>  
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 </body>
 </html>

@@ -7,8 +7,6 @@ let valorBebida;
 let sobremesa = "";
 let valorSobremesa;
 let btn = document.querySelector('button');
-let endereco = "";
-let nome = "";
 
 function selecionarPrato(nomePrato) {
     
@@ -76,10 +74,46 @@ function habilitaBotao(){
 }
 
 
-function finalizarPedido(){
-    nome = prompt("Informe o seu nome:");
-    endereco = prompt("Informe o seu endereço:");
+function confirmaPedido(){
+    
     calculaValorPedido();
-    let mensagem = `Olá, gostaria de fazer o pedido:- Prato: ${prato} - Bebida: ${bebida} - Sobremesa: ${sobremesa} Total: R$ ${valorPedido.toFixed(2)} Nome: ${nome} Endereço: ${endereco}`;
-    window.open("https://wa.me/551199999999?text=" + mensagem, '_blank');
+
+    const habilitarConfirma = document.querySelector(".escondido");
+    habilitarConfirma.classList.remove("escondido"); 
+    
+    const confirmaPrato = document.querySelector(".confirma-prato").innerHTML = prato;
+    const confirmaValorPrato = document.querySelector(".preco-prato").innerHTML = valorPrato.replace(".",",");
+
+    const confirmaBebida = document.querySelector(".confirma-bebida").innerHTML = bebida;
+    const confirmaValorBebida = document.querySelector(".preco-bebida").innerHTML = valorBebida.replace(".",",");
+
+    const confirmaSobremesa = document.querySelector(".confirma-sobremesa").innerHTML = sobremesa;
+    const confirmaValorSobremesa = document.querySelector(".preco-sobremesa").innerHTML = valorSobremesa.replace(".",",");
+
+    const confirmaValorTotal = document.querySelector(".valor-total").innerHTML = valorPedido.toFixed(2).replace(".",",");
+}
+
+
+function finalizarPedido(){
+    
+    const nome = prompt("Informe o seu nome:");
+    const endereco = prompt("Informe o seu endereço:");
+
+    const uri = `Olá, gostaria de fazer o pedido:
+    - Prato: ${prato}
+    - Bebida: ${bebida}
+    - Sobremesa: ${sobremesa}
+    Total: R$ ${valorPedido.toFixed(2)}
+
+    Nome: ${nome} 
+    Endereço: ${endereco} 
+    `
+
+    const uriEncoded = encodeURIComponent(uri);
+    window.open(`https://wa.me/5511982433560?text=${uriEncoded}`, '_blank');
+}
+
+function cancelaPedido(){
+    const cancela = document.querySelector(".confirma");
+    cancela.classList.add("escondido");
 }
