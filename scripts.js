@@ -90,7 +90,7 @@ function confirmaPedido(){
     const confirmaSobremesa = document.querySelector(".confirma-sobremesa").innerHTML = sobremesa;
     const confirmaValorSobremesa = document.querySelector(".preco-sobremesa").innerHTML = valorSobremesa.replace(".",",");
 
-    const confirmaValorTotal = document.querySelector(".valor-total").innerHTML = valorPedido.toFixed(2).replace(".",",");
+    const confirmaValorTotal = document.querySelector(".valor-total").innerHTML = "R$ " + valorPedido.toFixed(2).replace(".",",");
 }
 
 
